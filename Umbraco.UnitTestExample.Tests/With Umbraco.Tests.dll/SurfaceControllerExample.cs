@@ -6,6 +6,7 @@ using Umbraco.Core;
 using Umbraco.Core.Configuration.UmbracoSettings;
 using Umbraco.Core.Logging;
 using Umbraco.Core.Profiling;
+using Umbraco.Tests.TestHelpers;
 using Umbraco.UnitTestExample.Web.Controllers;
 using Umbraco.Web;
 using Umbraco.Web.Routing;
@@ -14,13 +15,13 @@ using Umbraco.Web.Security;
 namespace Umbraco.UnitTestExample.Tests.With_Umbraco.Tests.dll
 {
     [TestFixture]
-    public class SurfaceControllerExample 
+    public class SurfaceControllerExample// : BaseWebTest
     {
         [SetUp]
         public void Setup()
         {
             #region Step 2
-            //GetUmbracoContext("http://localhost", -1, null, true);
+            //GetUmbracoContext("http://localhost", -1, null, setSingleton: true);
             #endregion
 
             var appContext = new ApplicationContext(
@@ -37,7 +38,7 @@ namespace Umbraco.UnitTestExample.Tests.With_Umbraco.Tests.dll
         }
 
         [Test]
-        public void SimpleSurfaceController_Add()
+        public void Umbraco_SimpleSurfaceController_Add()
         {
             const int expectedSum = 3;
             var model = new AdditionModel

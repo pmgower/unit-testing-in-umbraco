@@ -24,9 +24,9 @@ namespace Umbraco.UnitTestExample.Tests.Manual_Umbraco_Tests
         [SetUp]
         public void Setup()
         {
-            var appContext = new ApplicationContext(
-                CacheHelper.CreateDisabledCacheHelper(),
-                new ProfilingLogger(Mock.Of<ILogger>(), Mock.Of<IProfiler>()));
+            //var appContext = new ApplicationContext(
+            //    CacheHelper.CreateDisabledCacheHelper(),
+            //    new ProfilingLogger(Mock.Of<ILogger>(), Mock.Of<IProfiler>()));
 
             //var umbracoContext = UmbracoContext.EnsureContext(
             //    new Mock<HttpContextBase>().Object,
@@ -41,10 +41,10 @@ namespace Umbraco.UnitTestExample.Tests.Manual_Umbraco_Tests
         [Test]
         public void SimpleSurfaceController_Add()
         {
-            const int expectedSum = 3;
+            const int expectedSum = 6;
             var model = new AdditionModel
             {
-                X = 1,
+                X = 4,
                 Y = 2,
                 IsPosted = true
             };
