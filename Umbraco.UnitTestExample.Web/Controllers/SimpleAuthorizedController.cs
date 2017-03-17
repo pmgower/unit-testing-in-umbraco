@@ -25,13 +25,13 @@ namespace Umbraco.UnitTestExample.Web.Controllers
         {
             return new[]
             {
-                "A", "B"
+                "X", "Y", "Z", "A", "B", "C"
             };
         }
 
         public string GetUserInfo()
         {
-            return Security.CurrentUser.Name;
+            return Security.CurrentUser?.Name;
         }
     }
 }
