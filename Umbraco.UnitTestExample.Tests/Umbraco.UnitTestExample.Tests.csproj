@@ -299,6 +299,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="With Umbraco.Tests.dll\AuthorizedExample.cs" />
     <Compile Include="Manual\ApiControllerExample.cs" />
     <Compile Include="Manual\SurfaceControllerExample.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
