@@ -21,19 +21,19 @@ namespace Umbraco.UnitTestExample.Web.Controllers
 
         // /umbraco/api/poi/info/{id}
         [HttpGet]
-        public IHttpActionResult Info(int id)
+        public IHttpActionResult Subtract(SubtrationModel model)
         {
             IHttpActionResult result = this.BadRequest();
             try
             {
-                if (id == -1)
+                if (model.X == -1 && model.Y == -1)
                 {
-                    throw new Exception("Error with ID -1");
+                    throw new Exception("Error with -1 as X & Y");
                 }
                 else
                 {
                     var jsonSettings = new Newtonsoft.Json.JsonSerializerSettings() { ContractResolver = new Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver() };
-                    string messageAsJson = Newtonsoft.Json.JsonConvert.SerializeObject(new { statusCode = 200, message = "OK", }, Newtonsoft.Json.Formatting.None, jsonSettings);
+                    string messageAsJson = Newtonsoft.Json.JsonConvert.SerializeObject(new { statusCode = 200, message = "OK", result = model.Result }, Newtonsoft.Json.Formatting.None, jsonSettings);
                     result = this.JsonString(messageAsJson);
                 }
             }
