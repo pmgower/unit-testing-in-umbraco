@@ -400,10 +400,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\BylineController.cs" />
+    <Compile Include="Controllers\ApiControllerBase.cs" />
     <Compile Include="Controllers\ContentController.cs" />
-    <Compile Include="Controllers\CtaFormController.cs" />
+    <Compile Include="Controllers\JsonStringResultExtension.cs" />
     <Compile Include="Controllers\SimpleAuthorizedController.cs" />
+    <Compile Include="Controllers\SimpleApiController.cs" />
     <Compile Include="Controllers\SimpleSurfaceController.cs" />
     <Compile Include="Models\AdditionModel.cs" />
     <Compile Include="Models\BylineModel.cs" />
