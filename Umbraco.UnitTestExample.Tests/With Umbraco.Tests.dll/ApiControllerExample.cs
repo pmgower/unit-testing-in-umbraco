@@ -13,8 +13,12 @@ using Umbraco.Web.Security;
 
 namespace Umbraco.UnitTestExample.Tests.With_Umbraco.Tests.dll
 {
+    /// <summary>
+    /// This code was taken from Lars-Erik's github repo where he had some sample unit tests for Umbraco
+    /// https://github.com/lars-erik/umbraco-unit-testing-samples
+    /// </summary>
     [TestFixture]
-    public class SurfaceControllerExample// : Umbraco.Tests.TestHelpers.BaseWebTest
+    public class ApiControllerExample //: Umbraco.Tests.TestHelpers.BaseWebTest
     {
         [SetUp]
         public void Setup()
@@ -37,21 +41,19 @@ namespace Umbraco.UnitTestExample.Tests.With_Umbraco.Tests.dll
         }
 
         [Test]
-        public void Umbraco_SimpleSurfaceController_Add()
+        public void Umbraco_SimpleApiController_Subtract()
         {
-            const int expectedSum = 3;
-            var model = new AdditionModel
+            string expectedJson = "{\"statusCode\":200,\"message\":\"OK\",\"result\":2}";
+            var model = new SubtrationModel
             {
-                X = 1,
-                Y = 2,
-                IsPosted = true
+                X = 4,
+                Y = 2
             };
 
-            var controller = new SimpleSurfaceController();
-            var result = controller.AddForm(model);
-            var resultModel = (AdditionModel)result.Model;
-
-            Assert.AreEqual(expectedSum, resultModel.Sum);
+            var controller = new SimpleApiController();
+            var result = controller.Subtract(model) as JsonStringResultExtension.CustomJsonStringResult;
+            var actualJson = result.Json;
+            Assert.AreEqual(expectedJson, actualJson);
         }
     }
 }
