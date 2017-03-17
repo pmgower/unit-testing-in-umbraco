@@ -6,7 +6,9 @@ using Umbraco.Core;
 using Umbraco.Core.Configuration.UmbracoSettings;
 using Umbraco.Core.Logging;
 using Umbraco.Core.Profiling;
-using Umbraco.Tests.TestHelpers;
+#region Step 2
+//using Umbraco.Tests.TestHelpers;
+#endregion
 using Umbraco.UnitTestExample.Web.Controllers;
 using Umbraco.Web;
 using Umbraco.Web.Routing;
